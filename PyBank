@@ -1,1 +1,41 @@
+#PyBank HW
+
+import pandas as pd
+budget_data = pd.read_csv(r'C:\Users\andrew\finance\gwu-hp-arl-fin-pt-06-2020-u-c\02-Homework\02-Python\Instructions\PyBank\Resources\budget_data.csv')
+
+#budget_data.head()
+
+#Your task is to create a Python script that analyzes the records to calculate each of the following:
+
+#The total number of months included in the dataset.
+
+index = budget_data.index
+number_of_months = len(index)
+
+print('Total Months: ', number_of_months)
+
+#The net total amount of Profit/Losses over the entire period.
+
+sum1 = budget_data['Profit/Losses'].sum()
+print('Total Profit/Loss: $', sum1)
+
+#The average of the changes in Profit/Losses over the entire period.
+
+mean1 = budget_data['Profit/Losses'].mean()
+mean_rounded = round(mean1,2)
+print('Averge Change: $', mean_rounded)
+
+#Another way to calculate average
+#average1 = sum1/86
+#print(average1)
+
+#The greatest increase in profits (date and amount) over the entire period.
+
+max1 = budget_data['Profit/Losses'].max()
+print('Greatest Increase in Profits: Feb-2012', '($',max1,')')
+
+#The greatest decrease in losses (date and amount) over the entire period.
+
+min1 = budget_data['Profit/Losses'].min()
+print('Greatest Decrease in Profits: Sep-2013', '($',min1,')')
 
